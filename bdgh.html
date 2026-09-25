@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- صورة معينة المباشرة للمشاركة (Open Graph) -->
+<meta property="og:image" content="https://i.supaimg.com/965e0c3e-50d9-4ba0-97dc-487d00fde583/65d81f5f-a6bc-4d5d-902b-a151970a1428.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- صورة المعاينة لمنصة تويتر / إكس -->
+<meta name="twitter:image" content="https://i.supaimg.com/965e0c3e-50d9-4ba0-97dc-487d00fde583/65d81f5f-a6bc-4d5d-902b-a151970a1428.jpg">
+
+    <title>دعوة زفاف فاخرة</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Amiri:wght@400;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ede9e3;
+            color: #4a3f35;
+            font-family: 'Amiri', serif;
+            overflow-x: hidden;
+        }
+
+        /* ----------------------------------
+           1. قسم الفيديو الأساسي
+        ---------------------------------- */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(to bottom, rgba(237, 233, 227, 0) 0%, #ede9e3 100%);
+            pointer-events: none;
+        }
+
+        .hero-overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+            z-index: 2;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            width: 90%;
+            opacity: 0;
+        }
+
+        .hero-overlay-text.show {
+            animation: textReveal 1.2s ease-out forwards;
+        }
+
+        @keyframes textReveal {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -30%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .hero-overlay-text h1 {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-overlay-text p {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* ----------------------------------
+           2. كروت المحتوى أسفل الفيديو
+        ---------------------------------- */
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 70px 20px 60px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .video-card {
+            padding: 0;
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(74, 63, 53, 0.08);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .video-card video {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+        }
+
+        /* ----------------------------------
+           3. قسم الخاتم والحرفين
+        ---------------------------------- */
+        .ring-monogram-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px auto 20px;
+            direction: ltr;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .ring-monogram-container .letter {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #8c7d6b;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            line-height: 1;
+        }
+
+        .ring-monogram-container img {
+            width: 80px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+        }
+
+        /* ----------------------------------
+           4. البوست / العبارة بدون صندوق
+        ---------------------------------- */
+        .wedding-quote {
+            text-align: center;
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 1.5rem;
+            color: #5a4b3c;
+            line-height: 1.9;
+            margin: 20px auto 40px;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #8c7d6b;
+            font-size: 1rem;
+        }
+        
+        
+        /* كارت العائلات */
+.family-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(140, 125, 107, 0.2);
+    padding: 35px 20px;
+    margin: 30px auto;
+    max-width: 750px;
+    text-align: center;
+    box-shadow: none;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* الترتيب أفقي دائماً بجانب بعضهما */
+.family-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* ليمتد الخط الفاصل بكامل ارتفاع العمودين */
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.family-column {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.family-column h3 {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.5rem;
+    color: #4a3f35;
+    margin-bottom: 8px;
+}
+
+.family-name {
+    font-family: 'Amiri', serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #8c7d6b;
+    margin-bottom: 15px;
+}
+
+.family-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.family-column ul li {
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    color: #5a4b3c;
+    margin-bottom: 8px;
+    white-space: nowrap; /* لمنع التفاف النص على الموبايل */
+}
+
+/* الخط المنقط الرأسي بالطول */
+.divider-line {
+    width: 1px;
+    align-self: stretch;
+    border-left: 2px dotted rgba(140, 125, 107, 0.5);
+    margin: 0 10px;
+}
+
+/* الآية القرأنية في الأسفل */
+.love-post {
+    font-family: 'Amiri', serif;
+    font-size: 1.25rem;
+    color: #5a4b3c;
+    line-height: 1.8;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(140, 125, 107, 0.15); /* خط فاصل خفيف جداً فوق الآية */
+}
+/* زر أيقونة الصوت أسفل الشمال */
+.music-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(140, 125, 107, 0.3);
+    color: #4a3f35;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+    background: #ffffff;
+}
+
+
+/* --- صندوق العداد التنازلي والتواريخ --- */
+.countdown-card, .location-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(140, 125, 107, 0.2);
+    padding: 30px 20px;
+    margin: 30px auto;
+    max-width: 750px;
+    text-align: center;
+    box-shadow: none;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.section-title, .location-title {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.6rem;
+    color: #4a3f35;
+    margin-bottom: 20px;
+}
+
+/* شبكة الصناديق الصغيرة للعداد */
+.countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    direction: ltr; /* لترتيب الأيام، الساعات، الدقائق، الثواني بشكل صحيح */
+    margin-bottom: 25px;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(140, 125, 107, 0.25);
+    border-radius: 12px;
+    padding: 12px 8px;
+    min-width: 65px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.time-box span {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #8c7d6b;
+    display: block;
+    line-height: 1.2;
+}
+
+.time-box p {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 0.85rem;
+    color: #5a4b3c;
+    margin-top: 4px;
+}
+
+/* قائمة التواريخ */
+.wedding-dates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 450px;
+    margin: 0 auto;
+    padding-top: 15px;
+    border-top: 1px dotted rgba(140, 125, 107, 0.3);
+}
+
+.date-item {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Amiri', serif;
+    font-size: 1.15rem;
+    color: #5a4b3c;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.date-item.highlight {
+    background: rgba(140, 125, 107, 0.1);
+    font-weight: bold;
+    color: #4a3f35;
+}
+
+/* --- قسم الخريطة والموقع --- */
+.map-illustration {
+    margin-bottom: 15px;
+}
+
+.map-icon {
+    font-size: 3rem;
+    color: #8c7d6b;
+}
+
+.location-address {
+    font-family: 'Amiri', serif;
+    font-size: 1.2rem;
+    color: #5a4b3c;
+    margin-bottom: 20px;
+}
+
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #8c7d6b;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(140, 125, 107, 0.25);
+}
+
+.map-button:hover {
+    background: #6e6152;
+    transform: translateY(-2px);
+}
+
+/* --- ملاحظة الغداء --- */
+.dinner-notice {
+    text-align: center;
+    margin: 30px auto 40px;
+    padding: 15px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.25rem;
+    color: #4a3f35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.dinner-notice i {
+    color: #8c7d6b;
+    font-size: 1.4rem;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px 40px;
+    color: #8c7d6b;
+}
+
+/* تنسيق خط الأيقونات الجانبي */
+.social-links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto 15px;
+}
+
+.social-links-wrapper .line {
+    flex: 1;
+    height: 1px;
+    background: rgba(140, 125, 107, 0.3);
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* الأيقونات الشفافة والأنيقة */
+.social-icons a {
+    color: #4a3f35;
+    font-size: 1.4rem;
+    opacity: 0.6; /* إعطاء مظهر شفاف */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    opacity: 1; /* إظهار الشفافية بالكامل عند التمرير */
+    transform: translateY(-2px);
+    color: #8c7d6b;
+}
+
+/* نص التطوير والحقوق */
+.developer-credit {
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    color: #7a6c5b;
+}
+
+.developer-credit a {
+    color: #4a3f35;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.developer-credit a:hover {
+    color: #8c7d6b;
+    text-decoration: underline;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- قسم الفيديو -->
+    <section class="hero-section">
+        <div class="hero-overlay-text" id="heroText">
+            <h1>دعوة زفاف</h1>
+            <p>مـحمـد & حـنـان</p>
+        </div>
+        <video class="hero-video" id="weddingVideo" autoplay loop muted playsinline>
+            <source src="hg.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+    </section>
+
+    <!-- المحتوى السفلي -->
+    <main class="content-container">
+        <!-- فيديو الكارت -->
+        <div class="video-card gsap-card">
+            <video id="cardVideo" loop playsinline muted>
+                <source src="video2.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+        </div>
+
+        <!-- قسم الخاتم والحرفين -->
+        <div class="ring-monogram-container gsap-card">
+    <span class="letter">H</span>
+            <img src="a.png" alt="خاتم زفاف">
+    <span class="letter">M</span>
+        </div>
+        <!-- كارت عائلات العريس والعروسة -->
+<div class="family-card gsap-card">
+    <div class="family-grid">
+        <!-- أهل العريس (يمين) -->
+        <div class="family-column">
+            <h3>أهل العريس</h3>
+            <p class="family-name">عائلة: [اسم العائلة]</p>
+            <ul>
+                <li>الأستاذ: [الاسم]</li>
+                <li>الحاج: [الاسم]</li>
+                <li>المهندس: [الاسم]</li>
+                <li>الرابع: [الاسم]</li>
+            </ul>
+        </div>
+
+        <!-- الخط العمودي المنقط بالطول -->
+        <div class="divider-line"></div>
+
+        <!-- أهل العروسة (شمال) -->
+        <div class="family-column">
+            <h3>أهل العروسة</h3>
+            <p class="family-name">عائلة: [اسم العائلة]</p>
+            <ul>
+                <li>الأستاذ: [الاسم]</li>
+                <li>الحاج: [الاسم]</li>
+                <li>المهندس: [الاسم]</li>
+                <li>الرابع: [الاسم]</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- الآية القرأنية تحت العائلات -->
+    <p class="love-post">"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"</p>
+</div>
+        <!-- البوست تحت الدبلة مباشرة بدون أي صندوق -->
+        <div class="wedding-quote gsap-card">
+            "وبدأت حكايتنا في أجمل ليلة.. تتكتمل بها فرحتنا بحضوركم وتكتمل بها سعادتنا"
+        </div>
+        
+        
+         <!-- ==================== 1. صندوق العداد التنازلي والتواريخ ==================== -->
+<div class="countdown-card gsap-card">
+    <h3 class="section-title">المتبقي على يوم الزفاف</h3>
+    
+    <!-- العداد التنازلي (صناديق صغيرة) -->
+    <div class="countdown-grid">
+        <div class="time-box">
+            <span id="days">00</span>
+            <p>يوم</p>
+        </div>
+        <div class="time-box">
+            <span id="hours">00</span>
+            <p>ساعة</p>
+        </div>
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <p>دقيقة</p>
+        </div>
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <p>ثانية</p>
+        </div>
+    </div>
+
+    <!-- تواريخ المناسبات -->
+    <div class="wedding-dates-list">
+        <div class="date-item">
+            <span class="date-label">تاريخ قراءة الفاتحة:</span>
+            <span class="date-value">2023/10/15</span>
+        </div>
+        <div class="date-item">
+            <span class="date-label">تاريخ الخطوبة:</span>
+            <span class="date-value">2024/02/20</span>
+        </div>
+        <div class="date-item highlight">
+            <span class="date-label">تاريخ عقد القران والزفاف:</span>
+            <span class="date-value">2026/10/25</span>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 2. قسم موقع الحفل والخريطة ==================== -->
+<div class="location-card gsap-card">
+    <div class="map-illustration">
+        <!-- رسمة الخريطة (أيقونة فاخرة) -->
+        <i class="fa-solid fa-map-location-dot map-icon"></i>
+    </div>
+    <h3 class="location-title">موقع قاعة الحفل</h3>
+    <p class="location-address">قاعة المناسبات - العنوان بالتفصيل يكتب هنا</p>
+
+    <!-- زر التوجيه إلى خرائط جوجل -->
+    <a href="https://maps.app.goo.gl/cUAsYKW8HQZuMVuG9?g_st=ac" target="_blank" class="map-button">
+        <i class="fa-solid fa-location-dot"></i>
+        عرض موقع الحفل على الخريطة
+    </a>
+</div>
+
+<!-- ==================== 3. ملاحظة الغداء ==================== -->
+<div class="dinner-notice gsap-card">
+    <i class="fa-solid fa-utensils"></i>
+    <p>تناول طعام الغداء بعد صلاة الجمعة بمشيئة الله (عند العريس فقط)</p>
+</div>
+
+        </main>
+
+<footer>
+    <!-- خط ومجموعة الأيقونات الشفافة -->
+    <div class="social-links-wrapper">
+        <span class="line"></span>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/vayrovs?stkn=ZG5zZDA1d2R5NmFy" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/+201090659300" target="_blank" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.tiktok.com/@vayroweb?_r=1&_t=ZS-9A2R58X79Ll" target="_blank" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </div>
+        <span class="line"></span>
+    </div>
+
+    <!-- نص الحقوق والتطوير -->
+    <p class="developer-credit">
+        تم التطوير بواسطة 
+        <a href=" https://www.instagram.com/x_y_ayman_x?stkn=MWExM2Fmd2tjeWQ4bA==" target="_blank">@Yasser Ayman </a>
+    </p>
+</footer>
+
+
+
+
+<!-- ملف الأنشودة -->
+<audio id="bgMusic" loop>
+    <source src="nasheed.mp3" type="audio/mpeg">
+</audio>
+
+<!-- زر الأيقونة أسفل الشمال -->
+<button id="musicToggleBtn" class="music-btn" aria-label="تشغيل/إيقاف الصوت">
+    <i id="musicIcon" class="fa-solid fa-volume-high"></i>
+</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+
+// 1. تسجيل مكتبات GSAP
+gsap.registerPlugin(ScrollTrigger);
+
+// 2. فيديو الهيرو والنص
+const weddingVideo = document.getElementById('weddingVideo');
+const heroText = document.getElementById('heroText');
+weddingVideo.play().catch(() => {});
+
+let textShown = false;
+weddingVideo.addEventListener('timeupdate', () => {
+    if (!textShown && weddingVideo.currentTime >= 3.9) {
+        heroText.classList.add('show');
+        textShown = true;
+    }
+});
+
+weddingVideo.addEventListener('seeked', () => {
+    if (weddingVideo.currentTime < 1) {
+        heroText.classList.remove('show');
+        textShown = false;
+    }
+});
+
+// 3. الأنشودة وزر التحكم بالصوت
+const bgMusic = document.getElementById('bgMusic');
+const musicToggleBtn = document.getElementById('musicToggleBtn');
+const musicIcon = document.getElementById('musicIcon');
+let isUserPaused = false;
+
+document.addEventListener('click', () => {
+    if (bgMusic.paused && !isUserPaused) {
+        bgMusic.play().catch(() => {});
+    }
+}, { once: true });
+
+musicToggleBtn.addEventListener('click', () => {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        isUserPaused = false;
+        musicIcon.className = 'fa-solid fa-volume-high';
+    } else {
+        bgMusic.pause();
+        isUserPaused = true;
+        musicIcon.className = 'fa-solid fa-volume-xmark';
+    }
+});
+
+// 4. التحكم بفيديو الكارت وتنسيقه مع الصوت
+const cardVideo = document.getElementById('cardVideo');
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+            cardVideo.muted = false;
+            cardVideo.play().catch(() => {
+                cardVideo.muted = true;
+                cardVideo.play().catch(() => {});
+            });
+
+            if (!bgMusic.paused) {
+                bgMusic.pause();
+                musicIcon.className = 'fa-solid fa-volume-xmark';
+            }
+        } else {
+            cardVideo.pause();
+            cardVideo.muted = true;
+
+            if (!isUserPaused) {
+                bgMusic.play().catch(() => {});
+                musicIcon.className = 'fa-solid fa-volume-high';
+            }
+        }
+    });
+}, { threshold: [0, 0.6, 1] });
+
+cardObserver.observe(cardVideo);
+
+// 5. برمجة العداد التنازلي الحي (تغيير تاريخ الزفاف هنا)
+const weddingDate = new Date("October 25, 2026 19:00:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(days).padStart(2, '0');
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+    } else {
+        document.querySelector(".countdown-grid").innerHTML = "<h4 style='font-family: Amiri; font-size: 1.5rem;'>تم بحمد الله عقد القران والزفاف!</h4>";
+    }
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// 6. انيميشن ظهور الكروت مع التمرير (GSAP)
+gsap.utils.toArray('.gsap-card').forEach(card => {
+    gsap.to(card, {
+        scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out"
+    });
+});
+
+    </script>
+</body>
+</html>
